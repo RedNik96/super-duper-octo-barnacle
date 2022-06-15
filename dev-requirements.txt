@@ -1,0 +1,4 @@
+uvicorn[standard]==0.17.6
+pylint
+black
+isort

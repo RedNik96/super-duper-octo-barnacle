@@ -1,0 +1,2 @@
+# disable warning caused by missing docstring as I tend not to use them
+--disable=missing-function-docstring
