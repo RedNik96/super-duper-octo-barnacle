@@ -1,0 +1,39 @@
+name: Check Style guide
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+
+jobs:
+  check:
+    name: Check code style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+          cache: pip
+
+      - name: Install packages
+        run: pip install -r dev-requirements.txt
+
+      - name: Run pylint
+        uses: cclauss/GitHub-Action-for-pylint@0.7.0
+
+      - name: Run Black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          version: "22.3.0"
+
+      - name: Run isort
+        uses: isort/isort-action@master
