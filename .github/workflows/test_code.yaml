@@ -1,0 +1,45 @@
+name: Test app
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+
+jobs:
+  test_app:
+    name: Test app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Environment setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          cache: pip
+
+      - name: Cachde
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/dev-requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install packages
+        run: pip install -r dev-requirements.txt
+
+      - name: pylint
+        uses: cclauss/GitHub-Action-for-pylint@0.7.0
+
+      - name: Black check
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          version: "22.3.0"
+
+      - name: isort check
+        uses: isort/isort-action@master
