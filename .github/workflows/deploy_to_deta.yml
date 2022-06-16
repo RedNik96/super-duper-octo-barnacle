@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/deta-deploy
 
 jobs:
   deploy:
