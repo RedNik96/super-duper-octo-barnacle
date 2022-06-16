@@ -27,8 +27,7 @@ jobs:
         run: pip install -r dev-requirements.txt
 
       - name: Run pylint
-        run: |
-          pylint $(git ls-files '*.py')
+        uses: cclauss/GitHub-Action-for-pylint@0.7.0
 
       - name: Run Black
         uses: psf/black@stable
