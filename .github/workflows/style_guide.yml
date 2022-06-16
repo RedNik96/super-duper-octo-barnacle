@@ -4,9 +4,8 @@ on:
   pull_request:
     branches:
       - main
-    paths-ignore:
-      - 'README.md'
-      - '.gitignore'
+    paths:
+      - '**/*.py'
 
 jobs:
   check:
