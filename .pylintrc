@@ -1,2 +1,2 @@
-# disable warning caused by missing docstring as I tend not to use them
---disable=missing-function-docstring
+[MAIN]
+disable=C0114,C0115,C0116 # missing docstring (module, class, function)

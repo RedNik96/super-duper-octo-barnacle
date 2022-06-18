@@ -26,13 +26,17 @@ jobs:
         run: pip install -r dev-requirements.txt
 
       - name: Run pylint
-        uses: cclauss/GitHub-Action-for-pylint@0.7.0
+        run: |
+          pylint $(git ls-files '*.py')
+        if: always()
 
       - name: Run Black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
           version: "22.3.0"
+        if: always()
 
       - name: Run isort
         uses: isort/isort-action@master
+        if: always()
