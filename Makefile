@@ -25,3 +25,6 @@ isort:
 
 test:
 	${RUN_PYTHON_MODULE} pytest super_duper_octo_barnacle
+
+run:
+	${RUN_PYTHON_MODULE} uvicorn super_duper_octo_barnacle.main:app --reload
