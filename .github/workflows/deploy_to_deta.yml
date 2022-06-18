@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature/tooling-optimization
 
 jobs:
   deploy:
@@ -16,3 +17,4 @@ jobs:
         with:
           deta-access-token: ${{ secrets.DETA_TOKEN }}
           deta-name: 'super_duper_octo_barnacle'
+          deta-project-dir: 'super_duper_octo_barnacle'
