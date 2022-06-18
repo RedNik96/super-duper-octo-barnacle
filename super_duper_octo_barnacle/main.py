@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-description = """
+DESCRIPTION = """
 Bring your shopping list to the cloud. 🚀
 
 You will be able to:
@@ -14,11 +14,7 @@ You will be able to:
   * make an inventory to know what you have got at home (_not implemented_).
 """
 
-app = FastAPI(
-    title="Shopping list",
-    description=description,
-    version="0.0.1"
-)
+app = FastAPI(title="Shopping list", description=DESCRIPTION, version="0.0.1")
 
 
 @app.get("/")
