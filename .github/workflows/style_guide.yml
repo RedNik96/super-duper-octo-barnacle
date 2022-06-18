@@ -27,15 +27,15 @@ jobs:
 
       - name: Run pylint
         uses: cclauss/GitHub-Action-for-pylint@0.7.0
-        continue-on-error: true
+        if: always()
 
       - name: Run Black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
           version: "22.3.0"
-        continue-on-error: true
+        if: always()
 
       - name: Run isort
         uses: isort/isort-action@master
-        continue-on-error: true
+        if: always()
