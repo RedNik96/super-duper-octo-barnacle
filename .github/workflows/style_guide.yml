@@ -26,9 +26,8 @@ jobs:
         run: pip install -r dev-requirements.txt
 
       - name: Run pylint
-        # uses: cclauss/GitHub-Action-for-pylint@0.7.0
         run: |
-          pylint super_duper_octo_barnacle
+          pylint $(git ls-files '*.py')
         if: always()
 
       - name: Run Black
