@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/tooling-optimization
 
 jobs:
   deploy:
