@@ -17,4 +17,4 @@ Please delete options that are not relevant.
 - [ ] I have performed a self-review of my code
 - [ ] I have added thorough tests.
 - [ ] I have run the test locally.
-- [ ] I have run pylint, black and isort locally.
+- [ ] I have run `make pr`.
