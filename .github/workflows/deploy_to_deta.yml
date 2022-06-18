@@ -6,6 +6,7 @@ on:
       - main
     paths:
      - super_duper_octo_bernacle/**
+  workflow_dispatch:
 
 jobs:
   deploy:
