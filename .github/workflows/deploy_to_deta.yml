@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+     - super_duper_octo_bernacle/**
 
 jobs:
   deploy:
